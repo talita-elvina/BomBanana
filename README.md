@@ -54,6 +54,6 @@ Buka `dashboard/index.html` melalui browser dan pastikan koneksi MQTT menggunaka
 
 
 ## MQTT Configuration
-Broker: `broker.hivemq.com`
-MQTT over TLS: port `8883`
-MQTT over WebSocket: `wss://broker.hivemq.com:8884/mqtt`
+- Broker: `broker.hivemq.com`
+- MQTT over TLS: port `8883`
+- MQTT over WebSocket: `wss://broker.hivemq.com:8884/mqtt`
