@@ -6,6 +6,14 @@ Permainan menggunakan sensor accelerometer dan gyroscope untuk mendeteksi geraka
 ## Tampilan dashboard
 <img width="1600" height="849" alt="image" src="https://github.com/user-attachments/assets/21f42448-8ca7-4ed5-954c-7649d3019c17" />
 
+## Cara bermain
+- Siapkan dua HP Android yang menjalankan program sensor, yaitu HP A dan HP B.
+- Jalankan program game.py pada laptop dan buka dashboard di browser.
+- Setelah kedua HP terhubung, permainan dimulai dengan hitung mundur.
+- Pemain yang sedang memegang bom dapat mengguncang HP untuk mengoper bom kepada pemain lainnya.
+- Gerakan putaran HP yang memenuhi batas yang ditentukan dapat menambahkan waktu permainan.
+- Permainan berakhir ketika waktu habis. Dashboard menampilkan notifikasi akhir permainan dan skor yang diperoleh.
+
 ---
 
 ## Fitur
