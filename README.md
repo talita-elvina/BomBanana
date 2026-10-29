@@ -4,7 +4,8 @@ Proyek IoT game BomBanana menggunakan sensor HP dan MQTT.
 Permainan menggunakan sensor accelerometer dan gyroscope untuk mendeteksi gerakan HP. Data sensor dikirim melalui MQTT ke laptop untuk diproses, sedangkan dashboard web menampilkan status permainan, timer, skor, dan notifikasi saat permainan berakhir.
 
 ## Tampilan dashboard
-<img width="1600" height="849" alt="image" src="https://github.com/user-attachments/assets/21f42448-8ca7-4ed5-954c-7649d3019c17" />
+<img width="2844" height="1518" alt="image" src="https://github.com/user-attachments/assets/f042bca7-499e-4579-aa6d-5ebdaaf6b88c" />
+
 
 ## Cara bermain
 - Siapkan dua HP Android yang menjalankan program sensor, yaitu HP A dan HP B.
