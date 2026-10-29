@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BomBanana — Game Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-icon">🍌</span><span><b>BOM<span>BANANA</span></b><small>SHAKE · PASS · SURVIVE</small></span></a>
+      <div class="connection-status"><i id="connectionDot"></i><span id="connectionLabel">Belum terhubung</span><span class="mode">2 PLAYER</span></div>
+    </header>
+
+    <section class="connect-bar">
+      <label for="projectId">PROJECT ID</label>
+      <input id="projectId" value="bombanana_kelompok_ganti_id" autocomplete="off" required>
+      <button id="connectButton" form="connectForm" type="submit">SAMBUNGKAN <span>↗</span></button>
+      <form id="connectForm" class="hidden-form"></form>
+      <small>Samakan ID ini dengan game.py dan kedua HP.</small>
+    </section>
+
+    <main class="layout">
+      <aside class="left-column">
+        <section class="panel players-panel">
+          <h2><span>🍃</span> PEMAIN</h2>
+          <div class="player-mini" id="miniPlayerA"><div class="banana">🍌</div><div class="mini-copy"><b>PLAYER A</b><span>HP A · Accelerometer + Gyroscope</span><small id="miniStateA">● Menunggu data</small><span class="motion-text">Gerak: <strong id="miniAccelA">—</strong></span><span class="motion-text">Putaran: <strong id="miniGyroA">—</strong></span></div></div>
+          <div class="thin-line"></div>
+          <div class="player-mini" id="miniPlayerB"><div class="banana">🍌</div><div class="mini-copy"><b>PLAYER B</b><span>HP B · Accelerometer + Gyroscope</span><small id="miniStateB">● Menunggu data</small><span class="motion-text">Gerak: <strong id="miniAccelB">—</strong></span><span class="motion-text">Putaran: <strong id="miniGyroB">—</strong></span></div></div>
+        </section>
+        <section class="panel connection-panel">
+          <h2><span>🌐</span> KONEKSI</h2>
+          <div class="info-row"><span>Broker</span><b>HiveMQ</b></div>
+          <div class="info-row"><span>Protokol</span><b>MQTT / WSS</b></div>
+          <div class="info-row"><span>Data HP</span><b id="deviceCount">0 / 2</b></div>
+          <p class="small-note">Dashboard menerima status game dan data sensor melalui cloud.</p>
+        </section>
+      </aside>
+
+      <section class="center-column">
+        <section class="arena panel" id="arena">
+          <div class="timer-box"><small>WAKTU TERSISA</small><strong id="timeValue">30<span> dtk</span></strong><div class="timer-track"><i id="timeProgress"></i></div></div>
+          <div class="flight-zone" id="flightZone" data-holder="A">
+            <div class="flight-line"></div>
+            <span class="direction-arrow left-arrow">←</span><span class="direction-arrow right-arrow">→</span>
+            <div class="bomb-wrap" id="bombWrap"><span class="bomb" id="bombEmoji">💣</span><span class="catch-spark spark-a">✦</span><span class="catch-spark spark-b">✧</span><span class="catch-spark spark-c">✹</span></div>
+          </div>
+          <div class="player-lanes">
+            <div class="lane" id="laneA"><span class="lane-emoji">🍌</span><span class="lane-name">PLAYER A</span><span class="lane-state" id="laneStateA">MENUNGGU</span></div>
+            <div class="lane" id="laneB"><span class="lane-emoji">🍌</span><span class="lane-name">PLAYER B</span><span class="lane-state" id="laneStateB">MENUNGGU</span></div>
+          </div>
+          <div class="arena-message" id="arenaMessage">Sambungkan kedua HP untuk memulai permainan.</div>
+        </section>
+
+        <div class="bottom-cards">
+          <section class="panel score-panel"><h2>🏆 SKOR</h2><div class="score-number" id="scoreValue">0</div><p>Operan berhasil</p></section>
+          <section class="panel game-panel"><h2>🎮 STATUS GAME</h2><div class="info-row"><span>Permainan</span><b id="gameState">MENUNGGU</b></div><div class="info-row"><span>Pemegang bom</span><b id="holderName">Belum diketahui</b></div><p id="roundNote">Data permainan akan muncul setelah terhubung.</p></section>
+        </div>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel status-panel"><h2><span>🟢</span> GAME STATUS</h2><div class="info-row"><span>Mode</span><b>2 PLAYER</b></div><div class="info-row"><span>Gerakan</span><b>Sensor HP</b></div><div class="info-row"><span>Cloud</span><b id="cloudState">Offline</b></div><p class="small-note">Guncang HP yang memegang bom untuk mengoper. Putar HP untuk tambahan waktu jika fitur ini aktif.</p></section>
+        <section class="panel log-panel"><h2><span>📜</span> RIWAYAT AKSI <button id="clearLog" type="button">BERSIHKAN</button></h2><div class="activity-list" id="activityList"><div class="empty-state">Belum ada aktivitas. Event akan muncul di sini.</div></div></section>
+      </aside>
+    </main>
+    <footer>🍌 BOMBANANA <span>· IoT class project · Accelerometer · Gyroscope · MQTT</span></footer>
+  </div>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
