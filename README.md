@@ -53,6 +53,8 @@ Perintah dijalankan dari folder tempat hone_edge.py berada.
 ### 3. Dashboard
 Buka `dashboard/index.html` melalui browser dan pastikan koneksi MQTT menggunakan project ID yang sama dengan program Python.
 
+Project id yang digunakan: `bombanana_kelompok16_4951`
+
 
 ## Teknologi yang digunakan
 - Python
